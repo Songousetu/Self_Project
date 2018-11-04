@@ -1,0 +1,34 @@
+C:\Users\u0027623\AppData\Local\Continuum\anaconda3\python.exe C:/Users/u0027623/PycharmProjects/Learning/Video/Shuangmu_Video/test_Biaoding.py
+['./PPP/left_102.jpg']
+0.16002452328002453
+[[ 542.77229544    0.          263.45339087]
+ [   0.          526.6924941   256.26451005]
+ [   0.            0.            1.        ]]
+[[ 0.48429151 -1.85182279 -0.00970052  0.01530162  3.35714559]]
+[array([[ 0.05187174],
+       [-0.37811359],
+       [-1.56275132]])]
+[array([[  6.47049968],
+       [  0.03754249],
+       [ 28.94532296]])]
+total error:  0.024692522594941296
+
+
+
+C:\Users\u0027623\AppData\Local\Continuum\anaconda3\python.exe C:/Users/u0027623/PycharmProjects/Learning/Video/Shuangmu_Video/test_Biaoding.py
+['./PPP/left_1102.jpg']
+0.11365254423330447
+[[ 661.72094779    0.          322.69871999]
+ [   0.          654.95489299  188.53782982]
+ [   0.            0.            1.        ]]
+[[ -8.58704416e-01   7.22789843e+00  -6.94112666e-03  -4.52908221e-02
+   -3.02521584e+01]]
+[array([[-0.05635723],
+       [-0.41121532],
+       [-1.55042476]])]
+[array([[ -8.83927916],
+       [  4.63583599],
+       [ 34.5019772 ]])]
+total error:  0.017537024988102945
+
+Process finished with exit code 0

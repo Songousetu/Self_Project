@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./echarts.common.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 1000px;height:600px;margin:30px auto;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        myChart.setOption({
+            title: {
+                text: 'XXX大赛投票结果展示(竖版)'
+            },
+            tooltip: {},
+            legend: {
+                data:['票数']
+            },
+            xAxis: {
+                data: []
+            },
+            yAxis: {},
+            series: [{
+                name: '票数',
+                type: 'bar',
+                data: []
+            }]
+        });
+
+        function check(){
+            $.ajax({
+                type:"GET",
+                url:"./function.php?type=bar",
+                dataType:"json",
+                success:function(data){
+                    // 填入数据
+                    //alert(data.name);
+                    myChart.setOption({
+                        xAxis: {
+                            data: data.name
+                        },
+                        series: [{
+                            // 根据名字对应到相应的系列
+                            name: '票数',
+                            data: data.votes,
+                            markPoint : {
+                                data : [
+                                    {type : 'max', name: '最多票数'},
+                                    {type : 'min', name: '最少票数'}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name: '平均票数'}
+                                ]
+                            }
+                        }]
+                    });
+                }
+            });
+    }
+     window.setInterval(check, 100); //每秒执行一次
+    </script>
+</body>
+</html>
